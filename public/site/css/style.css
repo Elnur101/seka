@@ -637,7 +637,7 @@ Version: 1.0
 	-------------------------------------
 	4. portfolio block
 	-------------------------------------
-	5. services
+	5. service
 	-------------------------------------
 	6. latest project
 	-------------------------------------
@@ -11527,7 +11527,7 @@ ol.commentlist li::after {
 .product-block p{margin-bottom:0px;}
 
 /*-------------------------------------
-	5. services
+	5. service
 -------------------------------------*/
 .bg-service-team {
 	background-image: url(../images/our-services/crane-left.jpg);

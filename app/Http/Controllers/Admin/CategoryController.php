@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryStoreRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -13,7 +16,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+//        if(!Schema::hasTable('services')){
+//            return redirect()->back()->withErrors(['msg'=>'Таблица services отсутствует в базе данных.']);
+//        }
+        $categories = Category::all();
+        return view('admin.category.index', compact('categories'));
     }
 
     /**
@@ -21,15 +28,27 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::whereNull('parent_id')->with('children')->get();
+        return view('admin.category.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        $data = $request->validated();
+        $data['parent_id'] = $data['parent_id'] ?? null;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = Str::random().".".$file->getClientOriginalExtension();
+            $filePath = $file->storeAs('categories', $filename, 'public');
+            $data['image'] = $filePath;
+        }else{
+            $data['image'] = 'no-image.png';
+        }
+        Category::create($data);
+        return redirect()->route('admin.category.index')->with('success', 'Категория успешно добавлена!');
     }
 
     /**

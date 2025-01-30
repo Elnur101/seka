@@ -15,8 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('image')->default('no-image.png');
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->foreignId('parent_id')
+                ->nullable()
+                ->constrained('categories')
+                ->cascadeOnDelete();
             $table->timestamps();
         });
     }

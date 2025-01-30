@@ -1,6 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+    <meta name="description" content="" />
+    <!-- FAVICONS ICON -->
+    <link rel="icon" href="{{asset('/site/images/favicon.ico')}}" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('/site/images/favicon.png')}}" />
+    <!-- PAGE TITLE HERE -->
+    <title>Smart Mans Group</title>
+    <!-- MOBILE SPECIFIC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- BOOTSTRAP STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/bootstrap.min.css')}}">
+    <!-- FONTAWESOME STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/fontawesome/css/font-awesome.min.css')}}" />
+    <!-- FLATICON STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/flaticon.min.css')}}">
+    <!-- ANIMATE STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/animate.min.css')}}">
+    <!-- OWL CAROUSEL STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/owl.carousel.min.css')}}">
+    <!-- BOOTSTRAP SELECT BOX STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/bootstrap-select.min.css')}}">
+    <!-- MAGNIFIC POPUP STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/magnific-popup.min.css')}}">
+    <!-- LOADER STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/loader.min.css')}}">
+    <!-- MAIN STYLE SHEET -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/css/style.css')}}">
+    <!-- THEME COLOR CHANGE STYLE SHEET -->
+    <link rel="stylesheet" class="skin" type="text/css" href="{{asset('/site/css/skin/skin-1.css')}}">
+    <!-- REVOLUTION SLIDER CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/plugins/revolution/revolution/css/settings.css')}}">
+    <!-- REVOLUTION NAVIGATION STYLE -->
+    <link rel="stylesheet" type="text/css" href="{{asset('/site/plugins/revolution/revolution/css/navigation.css')}}">
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800italic,800,700italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Crete+Round:400,400i&amp;subset=latin-ext" rel="stylesheet">
+</head>
+<body id="bg">
+<div class="page-wrapper">
 <!-- HEADER START -->
 <header class="site-header header-style-6  mobile-sider-drawer-menu">
-
     <div class="top-bar top-bar-liner bg-gray">
         <div class="container">
             <div class="row">
@@ -24,8 +71,6 @@
             </div>
         </div>
     </div>
-    <!-- Search Link -->
-
     <div class="main-bar header-middle bg-white">
         <div class="container">
             <div class="logo-header">
@@ -72,7 +117,6 @@
             </div>
         </div>
     </div>
-
     <div class="sticky-header main-bar-wraper">
         <div class="main-bar header-botton nav-site-bg-primary">
             <div class="container">
@@ -88,42 +132,23 @@
                     <ul class=" nav navbar-nav">
                         <li class="active">
                             <a href="index.html">Главная</a>
-
                         </li>
-
                         <li>
-                            <a href="services-1.html">Услуги</a>
-                            <!--<ul class="sub-menu">
-                                <li><a href="services-1.html">Services</a></li>
-                                <li><a href="services-detail.html">Services Detail</a></li>
-                            </ul>-->
-                        </li>
-
-                        <!--<li>
-                            <a href="javascript:;">Features<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="footer-fixed.html">Footer Fixed</a></li>
-                                <li><a href="footer-light.html">Footer Light</a></li>
-                                <li><a href="footer-dark.html">Footer Dark</a></li>
-                            </ul>
-                        </li>-->
-
-                        <li>
-                            <a href="javascript:;">Магазин<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="product.html">Product</a></li>
-                                <li><a href="product-detail.html">Product Detail</a></li>
-                                <li><a href="shopping-cart.html">Shopping cart</a></li>
-                                <li><a href="wish-list.html">Wishlist</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                            </ul>
+                            <a href="{{route('shop.index')}}">Магазин<i class="fa fa-chevron-down"></i></a>
+{{--                            <ul class="sub-menu">--}}
+{{--                                <li><a href="#">Product</a></li>--}}
+{{--                                <li><a href="#l">Product Detail</a></li>--}}
+{{--                                <li><a href="#">Shopping cart</a></li>--}}
+{{--                                <li><a href="#">Wishlist</a></li>--}}
+{{--                                <li><a href="#">Checkout</a></li>--}}
+{{--                            </ul>--}}
                         </li>
                         <li>
                             <a href="#">Категории<i class="fa fa-chevron-down"></i></a>
                             <ul class="sub-menu">
                                 @foreach($categories as $category)
                                         <li>
-                                            <a href="#">{{$category->name}}</a>
+                                            <a href="{{ route('category.service', $category->id) }}">{{$category->name}}</a>
                                             @if($category->children->isNotEmpty())
                                                 <ul class="sub-menu">
                                                     @foreach($category->children as $child)
@@ -131,67 +156,31 @@
                                                     @endforeach
                                                 </ul>
                                             @endif
-
                                         </li>
-
                                 @endforeach
                             </ul>
-
                         </li>
-
-                        <!--<li>
-                            <a href="javascript:;">Blog<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="blog-list.html">List</a></li>
-                                <li><a href="blog-list-sidebar.html">List-sidebar</a></li>
-                                <li><a href="blog-grid.html">Grid</a></li>
-                                <li><a href="blog-grid-sidebar.html">Grid-sidebar</a></li>
-                                <li><a href="blog-post.html">Post</a></li>
-                            </ul>
-                        </li>-->
-
                         <li class="has-mega-menu">
                             <a href="contact-1.html">Контакты</a>
                         </li>
-
-                        <!--<li>
-                            <a href="javascript:;">Elements<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li><a href="shortcode-accordians.html">Accordians</a></li>
-                                <li><a href="shortcode-carousel-sliders.html">Carousel sliders</a></li>
-                                <li><a href="shortcode-counters.html">Counters</a></li>
-                                <li><a href="shortcode-google-map.html">Google map</a></li>
-                                <li><a href="shortcode-icon-box-styles.html">Icon box styles</a></li>
-                                <li><a href="shortcode-pricing-table.html">Pricing table</a></li>
-                                <li><a href="shortcode-toggles.html">Toggles</a></li>
-                                <li><a href="shortcode-tabs.html">Tabs</a></li>
-                                <li><a href="shortcode-testimonials.html">Testimonials</a></li>
-                                <li><a href="shortcode-video.html">Video</a></li>
-                            </ul>
-                        </li>-->
                     </ul>
                 </div>
-
-                <!-- ETRA Nav -->
                 <div class="extra-nav">
                     <div class="extra-cell">
                         <a href="#search" class="site-search-btn"><i class="fa fa-search"></i></a>
                     </div>
                     <div class="extra-cell">
                         <a href="javascript:;" class="wt-cart cart-btn dropdown-toggle" title="Your Cart" data-bs-toggle="dropdown">
-                                    <span class="link-inner">
-                                        <span class="woo-cart-total"> </span>
-                                        <span class="woo-cart-count">
-                                            <i class="fa fa-shopping-bag"></i>
-                                            <span class="shopping-bag wcmenucart-count ">2</span>
-                                        </span>
-                                    </span>
+                            <span class="link-inner">
+                                <span class="woo-cart-total"> </span>
+                                <span class="woo-cart-count">
+                                    <i class="fa fa-shopping-bag"></i>
+                                    <span class="shopping-bag wcmenucart-count ">2</span>
+                                </span>
+                            </span>
                         </a>
-
                         <div class="dropdown-menu cart-dropdown-item-wraper">
-
                             <div class="nav-cart-content">
-
                                 <div class="nav-cart-items p-a15">
                                     <div class="nav-cart-item clearfix">
                                         <div class="nav-cart-item-image">
@@ -228,7 +217,6 @@
 
                     </div>
                 </div>
-                <!-- SITE Search -->
                 <div id="search">
                     <span class="close"></span>
                     <form role="search" id="searchform" action="/search" method="get" class="radius-xl">
@@ -238,11 +226,8 @@
                         </div>
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
-
 </header>
 <!-- HEADER END -->

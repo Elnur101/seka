@@ -4,8 +4,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\SiteController;
+use App\Http\Controllers\CategoryServiceController;
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\Admin\CategoryController;
 Route::get('/', [SiteController::class, 'index'])->name('site.index');
 
+Route::get('category/{category}', [CategoryServiceController::class, 'showServices'])->name('category.service');
+Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -13,7 +18,7 @@ Route::get('/dashboard', function () {
 
 Route::group(['prefix'=>'admin', 'as'=>'admin.'], function (){
     Route::get('/', [AdminController::class, 'index'])->name('index');
-//    Route::resource('/category', Cate)
+    Route::resource('/category', CategoryController::class);
 });
 
 Route::middleware('auth')->group(function () {

@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
 class CategoryServiceProvider extends ServiceProvider
 {
     /**
-     * Register services.
+     * Register service.
      */
     public function register(): void
     {
@@ -18,13 +18,11 @@ class CategoryServiceProvider extends ServiceProvider
             $categories = Category::whereNull('parent_id')
                 ->with('children')
                 ->get();
-
             $view->with('categories', $categories);
         });
     }
-
     /**
-     * Bootstrap services.
+     * Bootstrap service.
      */
     public function boot(): void
     {

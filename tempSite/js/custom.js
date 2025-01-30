@@ -5,20 +5,20 @@ All JavaScript fuctions Start
 /*--------------------------------------------------------------------------------------------
 	document.ready ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
- /* 
+ /*
 
-	> Top Search bar Show Hide function by = custom.js  
-	> On scroll content animated function by = Viewportchecker.js 	
-	> Video responsive function by = custom.js 
+	> Top Search bar Show Hide function by = custom.js
+	> On scroll content animated function by = Viewportchecker.js
+	> Video responsive function by = custom.js
 	> magnificPopup function	by = magnific-popup.js
 	> magnificPopup for video function	by = magnific-popup.js
 	> Vertically center Bootstrap modal popup function by = custom.js
 	> Main menu sticky on top  when scroll down function by = custom.js
-	> page scroll top on button click function by = custom.js	
-	> input type file function by = custom.js	 
+	> page scroll top on button click function by = custom.js
+	> input type file function by = custom.js
 	> input Placeholder in IE9 function by = custom.js
-    > box height match window height according function by = custom.js 	
-	> footer fixed on bottom function by = custom.js	
+    > box height match window height according function by = custom.js
+	> footer fixed on bottom function by = custom.js
 	> accordion active calss function by = custom.js
 	> Top cart list Show Hide function by = custom.js
     > Nav submenu show hide on mobile by = custom.js
@@ -26,33 +26,33 @@ All JavaScript fuctions Start
     > Home Carousel_2 Full Screen with no margin function by = owl.carousel.js
 	>  related with content function by = owl.carousel.js
 	> Fade slider for home function by = owl.carousel.js
-	>  Blog post Carousel function by = owl.carousel.js 
+	>  Blog post Carousel function by = owl.carousel.js
 	> blog Carousel_1 Full Screen with no margin function by = owl.carousel.js //
-	> Home4 services Carousel_1 Full Screen with no margin function by = owl.carousel.js  //
+	> Home4 service Carousel_1 Full Screen with no margin function by = owl.carousel.js  //
     > home_logo_carousel() function by = owl.carousel.js //
 	> Hover Tab  function ========================== //
 
- */	
+ */
 
 /*--------------------------------------------------------------------------------------------
 	window on load ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
- /* 
-	 > equal each box 
-	 > skills bar function function by  = custom.js 
+ /*
+	 > equal each box
+	 > skills bar function function by  = custom.js
 		2.1 skills bar tooltips
 		2.2 skills bar widths
-	 > Bootstrap Select box function by  = bootstrap-select.min.js 
-	 > TouchSpin box function by  = jquery.bootstrap-touchspin.js 
-	 > TouchSpin box function by  = jquery.bootstrap-touchspin.js 
+	 > Bootstrap Select box function by  = bootstrap-select.min.js
+	 > TouchSpin box function by  = jquery.bootstrap-touchspin.js
+	 > TouchSpin box function by  = jquery.bootstrap-touchspin.js
 	 > masonry function function by = isotope.pkgd.min.js
 	 > page loader function by = custom.js
- */	
+ */
 /*--------------------------------------------------------------------------------------------
 	Window Scroll ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
  /*
- 	 > Window on scroll header color fill 
+ 	 > Window on scroll header color fill
  */
 
 /*--------------------------------------------------------------------------------------------
@@ -60,33 +60,33 @@ All JavaScript fuctions Start
 ---------------------------------------------------------------------------------------------*/
 
 (function ($) {
-	
+
     'use strict';
 /*--------------------------------------------------------------------------------------------
 	document.ready ALL FUNCTION START
----------------------------------------------------------------------------------------------*/	
+---------------------------------------------------------------------------------------------*/
 
-//  > Top Search bar Show Hide function by = custom.js =================== //	
+//  > Top Search bar Show Hide function by = custom.js =================== //
 	 function site_search(){
-			jQuery('a[href="#search"]').on('click', function(event) {                    
+			jQuery('a[href="#search"]').on('click', function(event) {
 			jQuery('#search').addClass('open');
 			jQuery('#search > form > input[type="search"]').focus();
 		});
-					
+
 		jQuery('#search, #search button.close').on('click keyup', function(event) {
 			if (event.target === this || event.target.className === 'close') {
 				jQuery(this).removeClass('open');
 			}
-		});  
-	 }	
-// > Video responsive function by = custom.js ========================= //	
+		});
+	 }
+// > Video responsive function by = custom.js ========================= //
 
-	function video_responsive(){	
+	function video_responsive(){
 		jQuery('iframe[src*="youtube.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
-		jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');	
-	}  
+		jQuery('iframe[src*="vimeo.com"]').wrap('<div class="embed-responsive embed-responsive-16by9"></div>');
+	}
 
-	
+
 
 	// > magnificPopup function	by = magnific-popup.js =========================== //
 	function magnific_popup(){
@@ -106,9 +106,9 @@ All JavaScript fuctions Start
        });
 	}
 
-// > magnificPopup for video function	by = magnific-popup.js ===================== //	
+// > magnificPopup for video function	by = magnific-popup.js ===================== //
 
-	function magnific_video(){	
+	function magnific_video(){
 		jQuery('.mfp-video').magnificPopup({
 			type: 'iframe',
 		});
@@ -116,13 +116,13 @@ All JavaScript fuctions Start
 
 // Vertically center Bootstrap modal popup function by = custom.js ==============//
 
-	function popup_vertical_center(){	
+	function popup_vertical_center(){
 		jQuery(function() {
 			function reposition() {
 				var modal = jQuery(this),
 				dialog = modal.find('.modal-dialog');
 				modal.css('display', 'block');
-				// Dividing by two centers the modal exactly, but dividing by three 
+				// Dividing by two centers the modal exactly, but dividing by three
 				// or four works better for larger screens.
 				dialog.css("margin-top", Math.max(0, (jQuery(window).height() - dialog.height()) / 2));
 			}
@@ -135,7 +135,7 @@ All JavaScript fuctions Start
 		});
 	}
 
-// > Main menu sticky on top  when scroll down function by = custom.js ========== //		
+// > Main menu sticky on top  when scroll down function by = custom.js ========== //
 
 	function sticky_header(){
 		if(jQuery('.sticky-header').length){
@@ -145,7 +145,7 @@ All JavaScript fuctions Start
 		}
 	}
 
-// > page scroll top on button click function by = custom.js ===================== //	
+// > page scroll top on button click function by = custom.js ===================== //
 
 	function scroll_top(){
 		jQuery("button.scroltop").on('click', function() {
@@ -165,7 +165,7 @@ All JavaScript fuctions Start
 		});
 	}
 
-// > input type file function by = custom.js ========================== //	 	 
+// > input type file function by = custom.js ========================== //
 
 	function input_type_file_form(){
 		jQuery(document).on('change', '.btn-file :file', function() {
@@ -183,10 +183,10 @@ All JavaScript fuctions Start
 			} else {
 				if (log) alert(log);
 			}
-		});	
+		});
 	}
 
-// > input Placeholder in IE9 function by = custom.js ======================== //	
+// > input Placeholder in IE9 function by = custom.js ======================== //
 
 	function placeholderSupport(){
 	/* input placeholder for ie9 & ie8 & ie7 */
@@ -209,9 +209,9 @@ All JavaScript fuctions Start
 			});
 		}
 		/*fix for IE7 and IE8 end */
-	}	
+	}
 
-// > box height match window height according function by = custom.js ========= //	
+// > box height match window height according function by = custom.js ========= //
 
 	function set_height() {
 		if(jQuery('.demo-wraper').length){
@@ -220,7 +220,7 @@ All JavaScript fuctions Start
 		}
 	}
 
-// > footer fixed on bottom function by = custom.js ======================== //	
+// > footer fixed on bottom function by = custom.js ======================== //
 
 	function footer_fixed() {
 	  jQuery('.site-footer').css('display', 'block');
@@ -230,7 +230,7 @@ All JavaScript fuctions Start
 	  jQuery('.site-footer').css('height', footerHeight);
 	}
 
-// > accordion active calss function by = custom.js ========================= //	
+// > accordion active calss function by = custom.js ========================= //
 
 	function accordion_active() {
 		jQuery('.acod-head a').on('click', function() {
@@ -240,7 +240,7 @@ All JavaScript fuctions Start
 			jQuery(this).parent().addClass('acc-actives'); //just to make a visual sense
 			(jQuery(this).parents('.acod-head').attr('class'));
 		 });
-	}	
+	}
 
 
 	//________Nav submenu show hide on mobile by = custom.js________//
@@ -264,7 +264,7 @@ All JavaScript fuctions Start
 	}
 	//________Mobile side drawer function by = custom.js________//
 	function mobile_side_drawer(){
-		jQuery('#mobile-side-drawer').on('click', function () { 
+		jQuery('#mobile-side-drawer').on('click', function () {
 			jQuery('.mobile-sider-drawer-menu').toggleClass('active');
 		});
 	}
@@ -284,8 +284,8 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:1
-			},			
-			
+			},
+
 			767:{
 				items:1,
 				margin:50
@@ -294,7 +294,7 @@ All JavaScript fuctions Start
 				items:2
 			}
 		}
-		
+
 	});
 	}
 
@@ -312,23 +312,23 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:1,
-			},	
+			},
 			720:{
 				items:1,
-				margin:20					
-			},						
+				margin:20
+			},
 			767:{
 				items:2,
-		
+
 			},
 			1000:{
 				items:3
 			}
-		}		
-		
+		}
+
 	});
 	}
-	
+
 //  related with content function by = owl.carousel.js ========================== //
 	function blog_related_slider(){
 	jQuery('.blog-related-slider').owlCarousel({
@@ -343,7 +343,7 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:2
-			},			
+			},
 			767:{
 				items:3
 			},
@@ -353,9 +353,9 @@ All JavaScript fuctions Start
 		}
 	});
 	}
-	
-	
-	
+
+
+
 // Fade slider for home function by = owl.carousel.js ========================== //
 	function aboutus_carousel(){
 	jQuery('.about-us-carousel').owlCarousel({
@@ -387,7 +387,7 @@ All JavaScript fuctions Start
 		animateOut:'fadeOut',
 	})	;
 	}
-	
+
 // > blog Carousel_1 Full Screen with no margin function by = owl.carousel.js ========================== //
 
 	function blog_carousel_1(){
@@ -403,7 +403,7 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:2
-			},			
+			},
 			767:{
 				items:2
 			},
@@ -416,12 +416,12 @@ All JavaScript fuctions Start
 		}
 	});
 	}
-	
-	
-// > Home4 services Carousel_1 Full Screen with no margin function by = owl.carousel.js ========================== //
+
+
+// > Home4 service Carousel_1 Full Screen with no margin function by = owl.carousel.js ========================== //
 
 	function Home_services_carousel(){
-	jQuery('.Home-services-carousel').owlCarousel({
+	jQuery('.Home-service-carousel').owlCarousel({
         loop:true,
 		margin:30,
 		nav:true,
@@ -433,7 +433,7 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:2
-			},			
+			},
 			767:{
 				items:3
 			},
@@ -445,8 +445,8 @@ All JavaScript fuctions Start
 			}
 		}
 	});
-	}	
-	
+	}
+
 
 // > home_logo_carousel() function by = owl.carousel.js ========================== //
 	function home_logo_carousel(){
@@ -463,8 +463,8 @@ All JavaScript fuctions Start
 			},
 			480:{
 				items:3
-			},			
-			
+			},
+
 			767:{
 				items:4
 			},
@@ -472,14 +472,14 @@ All JavaScript fuctions Start
 				items:5
 			}
 		}
-		
+
 	});
 	}
 
 
 // > home_projects_filter Full Screen with no margin function by = owl.carousel.js ========================== //
 	function home_projects_filter(){
-		
+
 		var owl = jQuery('.owl-carousel-filter').owlCarousel({
 		loop:false,
 		autoplay:false,
@@ -495,24 +495,24 @@ All JavaScript fuctions Start
 			540:{
 				items:2,
 				nav:true,
-				margin:20				
+				margin:20
 			},
 			768:{
 				items:3,
 				nav:true,
-			},			
+			},
 			991:{
 				items:3
 			},
 			1136:{
 				items:4
-			},					
+			},
 			1366:{
 				items:5
-			}	
+			}
 		    }
 		})
-		
+
 		/* Filter Nav */
 
 		jQuery('.btn-filter-wrap').on('click', '.btn-filter', function(e) {
@@ -525,43 +525,43 @@ All JavaScript fuctions Start
 			jQuery(this).addClass('btn-active').siblings().removeClass('btn-active');
 
 			/* Filter */
-			owl.owlFilter(filter_data, function(_owl) { 
-				jQuery(_owl).find('.item').each(owlAnimateFilter); 
+			owl.owlFilter(filter_data, function(_owl) {
+				jQuery(_owl).find('.item').each(owlAnimateFilter);
 			});
 		})
-	
-	
-	
+
+
+
 	}
-// > ============== custom filter nav btn =============//	
+// > ============== custom filter nav btn =============//
 	function next_nav_slide(){
 		jQuery('#next-slide').on('click', function(){
     	jQuery('.owl-carousel-filter').trigger('next.owl.carousel');
     });
 	}
-	
+
 	function prev_nav_slide(){
 		jQuery('#prev-slide').on('click', function(){
     	jQuery('.owl-carousel-filter').trigger('prev.owl.carousel');
     });
 	}
-// > ============== custom filter nav btn =============//	
+// > ============== custom filter nav btn =============//
 
-	
+
 // > Hover Tab  function ========================== //
 	function hover_tab(){
 	jQuery('.hover-block-outer[data-toggle="tab-hover"] div').on('mouseenter', function(){
     	jQuery(this).tab('show');
 	});
 	}
-	
-	
+
+
 /*--------------------------------------------------------------------------------------------
 	Window on load ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
 
 	// text animation function
-	
+
 	var TxtType = function(el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -637,69 +637,69 @@ All JavaScript fuctions Start
 
 	/* 2.1 skills bar tooltips*/
 	function progress_bar_tooltips() {
-		jQuery(function () { 
+		jQuery(function () {
 		  jQuery('[data-toggle="tooltips"]').tooltip({trigger: 'manual'}).tooltip('show');
-		});  
+		});
 	}
 
 	/* 2.2 skills bar widths*/
 
-	function progress_bar_width() {	
-		jQuery( window ).on('scroll', function() {   
+	function progress_bar_width() {
+		jQuery( window ).on('scroll', function() {
 		  jQuery(".progress-bar").each(function(){
 			progress_bar_width = jQuery(this).attr('aria-valuenow');
 			jQuery(this).width(progress_bar_width + '%');
 		  });
-		}); 
+		});
 	}
 
-// > Bootstrap Select box function by  = bootstrap-select.min.js =============== // 
+// > Bootstrap Select box function by  = bootstrap-select.min.js =============== //
 
-	function select_box_form() {	
+	function select_box_form() {
 		jQuery('.selectpicker').selectpicker()
 	}
 
-// > Sidebar sticky  when scroll down function by = theia-sticky-sidebar.js ========== //		
-function sticky_sidebar(){		
+// > Sidebar sticky  when scroll down function by = theia-sticky-sidebar.js ========== //
+function sticky_sidebar(){
 	$('.rightSidebar')
 		.theiaStickySidebar({
 			additionalMarginTop: 100
-		});		
+		});
 }
 
 // > TouchSpin box function by  = jquery.bootstrap-touchspin.js =============== //
 
-	function input_number_form() {	 
+	function input_number_form() {
 		jQuery("input[name='demo3']").TouchSpin()
 	}
 
-// > TouchSpin box function by  = jquery.bootstrap-touchspin.js =============== // 
+// > TouchSpin box function by  = jquery.bootstrap-touchspin.js =============== //
 
-	function input_number_vertical_form() {	
+	function input_number_vertical_form() {
 		jQuery("input[name='demo_vertical2']").TouchSpin({
 		  verticalbuttons: true,
 		  verticalupclass: 'glyphicon glyphicon-plus',
 		  verticaldownclass: 'glyphicon glyphicon-minus'
-		})	
+		})
 	}
 
-// > masonry function function by = isotope.pkgd.min.js ========================= //	
+// > masonry function function by = isotope.pkgd.min.js ========================= //
 
-	// > masonry function function by = isotope.pkgd.min.js ========================= //	
+	// > masonry function function by = isotope.pkgd.min.js ========================= //
 	function masonryBox() {
-		if ( jQuery().isotope ) {      
+		if ( jQuery().isotope ) {
 			var $container = jQuery('.portfolio-wrap');
 				$container.isotope({
 					itemSelector: '.masonry-item',
 					transitionDuration: '1s',
 					originLeft: true,
 				});
-	
+
 			$container.imagesLoaded().progress( function() {
 				$container.isotope('layout');
 			});
-	
-			jQuery('.masonry-filter li').on('click',function() {                           
+
+			jQuery('.masonry-filter li').on('click',function() {
 				var selector = jQuery(this).find("a").attr('data-filter');
 				jQuery('.masonry-filter li').removeClass('active');
 				jQuery(this).addClass('active');
@@ -707,9 +707,9 @@ function sticky_sidebar(){
 				return false;
 			});
 		};
-	}	
+	}
 
-// > page loader function by = custom.js ========================= //		
+// > page loader function by = custom.js ========================= //
 
 	function page_loader() {
 		jQuery('.loading-area').fadeOut(1000)
@@ -726,15 +726,15 @@ function sticky_sidebar(){
         } else {
             jQuery(".is-fixed").removeClass("color-fill");
         }
-    };	
+    };
 
 /*--------------------------------------------------------------------------------------------
 	document.ready ALL FUNCTION START
 ---------------------------------------------------------------------------------------------*/
 	jQuery(document).ready(function() {
-	// > Top Search bar Show Hide function by = custom.js  		
+	// > Top Search bar Show Hide function by = custom.js
 		site_search(),
-	// > Video responsive function by = custom.js 
+	// > Video responsive function by = custom.js
 		video_responsive(),
 	// > magnificPopup function	by = magnific-popup.js
 		magnific_popup(),
@@ -742,19 +742,19 @@ function sticky_sidebar(){
 		magnific_video(),
 	// > Vertically center Bootstrap modal popup function by = custom.js
 		popup_vertical_center();
-	// > Main menu sticky on top  when scroll down function by = custom.js		
+	// > Main menu sticky on top  when scroll down function by = custom.js
 		sticky_header(),
-	// > page scroll top on button click function by = custom.js	
+	// > page scroll top on button click function by = custom.js
 		scroll_top(),
-	// > input type file function by = custom.js	 	
+	// > input type file function by = custom.js
 		input_type_file_form(),
-	// > input Placeholder in IE9 function by = custom.js		
+	// > input Placeholder in IE9 function by = custom.js
 		placeholderSupport(),
 	//	> box height match window height according function by = custom.js
 		set_height(),
-	// > footer fixed on bottom function by = custom.js	
+	// > footer fixed on bottom function by = custom.js
 		footer_fixed(),
-	// > accordion active calss function by = custom.js ========================= //			
+	// > accordion active calss function by = custom.js ========================= //
 		accordion_active(),
 	// > Nav submenu on off function by = custome.js ===================//
 		mobile_nav(),
@@ -763,53 +763,53 @@ function sticky_sidebar(){
 	// > Home Carousel_1 Full Screen with no margin function by = owl.carousel.js
 	    home_carousel_1(),
 	// > Home Carousel_2 Full Screen with no margin function by = owl.carousel.js
-          home_carousel_2()		
+          home_carousel_2()
 	//  related with content function by = owl.carousel.js ========================== //
 	    blog_related_slider(),
-	// Fade slider for home function by = owl.carousel.js ========================== //   
+	// Fade slider for home function by = owl.carousel.js ========================== //
 	   aboutus_carousel(),
    //  Blog post Carousel function by = owl.carousel.js ========================== //
 	   service_detail_carousel(),
    //  blog Carousel_1 Full Screen with no margin function by = owl.carousel.js ========================== //
 	   blog_carousel_1(),
-	//  Home4 services Carousel_1 Full Screen with no margin function by = owl.carousel.js ==========================  //  
+	//  Home4 service Carousel_1 Full Screen with no margin function by = owl.carousel.js ==========================  //
 		Home_services_carousel(),
 // > home_logo_carousel() function by = owl.carousel.js ========================== //
 	   home_logo_carousel(),
 // > Hover Tab  function ========================== //
 	   hover_tab(),
-//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //  
+//  home_projects_filter() Full Screen with no margin function by = owl.carousel.js ==========================  //
 		home_projects_filter(),
-		
-//  home_projects_filter() Next Prev btn  by = owl.carousel.js ==========================  // 		
+
+//  home_projects_filter() Next Prev btn  by = owl.carousel.js ==========================  //
         next_nav_slide(),
-		prev_nav_slide()		      
-	}); 
+		prev_nav_slide()
+	});
 
 /*--------------------------------------------------------------------------------------------
 	Window Load START
 ---------------------------------------------------------------------------------------------*/
 	jQuery(window).on('load', function () {
-	// > On scroll content animated function by = Viewportchecker.js	
+	// > On scroll content animated function by = Viewportchecker.js
 		animate_content(),
-	// > skills bar function function by  = custom.js			
+	// > skills bar function function by  = custom.js
 		progress_bar_tooltips(),
-	// > skills bar function function by  = custom.js		
+	// > skills bar function function by  = custom.js
 		progress_bar_width(),
-	// > On scroll content animated function by = Viewportchecker.js 			
+	// > On scroll content animated function by = Viewportchecker.js
 		select_box_form(),
-	// > Sidebar sticky  when scroll down function by = theia-sticky-sidebar.js ========== //		
+	// > Sidebar sticky  when scroll down function by = theia-sticky-sidebar.js ========== //
 		sticky_sidebar(),
-	// > TouchSpin box function by  = jquery.bootstrap-touchspin.js		
+	// > TouchSpin box function by  = jquery.bootstrap-touchspin.js
 		input_number_form(),
-	// > TouchSpin box function by  = jquery.bootstrap-touchspin.js		
+	// > TouchSpin box function by  = jquery.bootstrap-touchspin.js
 		input_number_vertical_form(),
-	// > box height match window height according function by = custom.js		
+	// > box height match window height according function by = custom.js
 		set_height(),
-	// > masonry function function by = isotope.pkgd.min.js		
+	// > masonry function function by = isotope.pkgd.min.js
 		masonryBox(),
-	// > page loader function by = custom.js		
-		page_loader() 
+	// > page loader function by = custom.js
+		page_loader()
 });
 
  /*===========================
@@ -817,16 +817,16 @@ function sticky_sidebar(){
 ===========================*/
 
 	jQuery(window).on('scroll', function () {
-	// > Window on scroll header color fill 
+	// > Window on scroll header color fill
 		color_fill_header()
 	});
-	
+
 /*===========================
 	Window Resize ALL FUNCTION START
 ===========================*/
 
 	jQuery(window).on('resize', function () {
-	// > footer fixed on bottom function by = custom.js		 
+	// > footer fixed on bottom function by = custom.js
 	 	footer_fixed(),
 	// > box height match window height according function by = custom.js
 	 	set_height()
@@ -836,12 +836,12 @@ function sticky_sidebar(){
 	Document on  Submit FUNCTION START
 ===========================*/
 
-	// > Contact form function by = custom.js	
+	// > Contact form function by = custom.js
 	jQuery(document).on('submit', 'form.cons-contact-form', function(e){
 		e.preventDefault();
 		var form = jQuery(this);
 		/* sending message */
-		
+
 		jQuery.ajax({
 			url: 'http://thewebmax.com/constrot/phpmailer/mail.php',
 			data: form.serialize() + "&action=contactform",
@@ -849,7 +849,7 @@ function sticky_sidebar(){
 			dataType: 'JSON',
 			beforeSend: function() {
 				jQuery('.loading-area').show();
-				
+
 			},
 
 			success:function(data){
@@ -864,13 +864,13 @@ function sticky_sidebar(){
 		jQuery('.cons-contact-form').trigger("reset");
 		return false;
 	});
-	
-	
-		// > Contact form (for home pages) function by = custom.js	
+
+
+		// > Contact form (for home pages) function by = custom.js
 	jQuery(document).on('submit', 'form.cons-contact-form2', function(e){
 		e.preventDefault();
 		var form = jQuery(this);
-	
+
 		/* sending message */
 		jQuery.ajax({
 			url: 'http://thewebmax.com/constrot/phpmailer/mail.php',
@@ -885,16 +885,16 @@ function sticky_sidebar(){
 				if(data['success']){
 				jQuery("<div class='alert alert-success'>"+data['message']+"</div>").insertBefore('form.cons-contact-form2');
 				}else{
-				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form2');	
+				jQuery("<div class='alert alert-danger'>"+data['message']+"</div>").insertBefore('form.cons-contact-form2');
 				}
 			}
 		});
 		jQuery('.cons-contact-form2').trigger("reset");
 		return false;
-	});	
+	});
 
 /*===========================
 	Document on  Submit FUNCTION END
-===========================*/	
+===========================*/
 
 })(window.jQuery);

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <title>ADMIN</title>
     <meta
         content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
         name="viewport"
@@ -12,7 +12,6 @@
         href="{{asset("/dash/assets/img/kaiadmin/favicon.ico")}}"
         type="image/x-icon"
     />
-
     <!-- Fonts and icons -->
     <script src="{{asset('/dash/assets/js/plugin/webfont/webfont.min.js')}}"></script>
     <script>
@@ -32,23 +31,22 @@
             },
         });
     </script>
-
     <!-- CSS Files -->
     <link rel="stylesheet" href="{{asset('/dash/assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('/dash/assets/css/plugins.min.css')}}" />
     <link rel="stylesheet" href="{{asset('/dash/assets/css/kaiadmin.min.css')}}" />
-
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="{{asset('/dash/assets/css/demo.css')}}" />
+{{--    <link rel="stylesheet" href="{{asset('/dash/assets/css/demo.css')}}" />--}}
 </head>
 <body>
 <div class="wrapper">
   @include('include-admin.sidebar')
-
     <div class="main-panel">
        @include('include-admin.main-header')
         <div class="container">
-           @yield('content')
+            <div class="page-inner">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>
@@ -73,7 +71,7 @@
 <script src="{{asset('/dash/assets/js/plugin/datatables/datatables.min.js')}}"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{asset('/dash/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>
+{{--<script src="{{asset('/dash/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js')}}"></script>--}}
 
 <!-- jQuery Vector Maps -->
 <script src="{{asset('/dash/assets/js/plugin/jsvectormap/jsvectormap.min.js')}}"></script>
